@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Pomodoro Breaks</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Gloria+Hallelujah|Permanent+Marker|Raleway&display=swap" rel= "stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" type="text/css" href="css/tomato.css" />
+  <link rel="stylesheet" type="text/css" href="css/main.css" />
+  <link rel="stylesheet" type="text/css" href="css/countdown.css" />
+  <link rel="stylesheet" href="css/jquery.progressbar.css">
+
+
+</head>
+<body>
+  <h1>Tomato TimeOut-o</h1>
+  <h2>
+    The Pomodoro Technique is a time management method developed in the 1980s by
+    Fracesco Cirillo based on a tomato-shaped kitched timer he used. The
+    technique uses a timer to break down work into 25-minute intervals followed
+    by short 5-minute breaks. Each interval is known as a <i>pomodoro</i>
+    (Italian for "tomato"). At the end of four intervals, an extra long break is
+    awarded to the user.
+  </h2>
+  <h2 id="toBegin">
+    Click the tomato to begin!
+  </h2>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<div class="container">
+  <div class="full-tomato">
+    <div class="top">
+      <div class="tomato">
+        <div id="tomatoTop">
+        </div>
+        <div id="tomatoFill">
+        </div>
+      </div>
+    </div>
+    <span id="countdown-number"></span>
+    <div class="bottom">
+      <div class="tomato">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="steps"></div>
+
+<!-- Source: https://fdossena.com/?p=html5cool/buttons/i.frag
+<div id="button">
+  <a href="something" class="button1 bouncy">Start</a>
+  <a href="something" class="button1 bouncy" style="animation-delay:0.07s">Reset</a>
+</div>
+-->
+
+<!--source: https://codepen.io/ashblue/pen/mCtuA-->
+<div id="table" class="table-editable">
+  <span class="table-add glyphicon glyphicon-plus"></span>
+  <table class="table">
+    <tr>
+      <th>Task</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr>
+      <td contenteditable="true">1</td>
+      <td contenteditable="true">Proposal Writing</td>
+      <td contenteditable="true">Not Started</td>
+      <td>
+        <span class="table-remove glyphicon glyphicon-remove"></span>
+      </td>
+      <td>
+        <span class="table-up glyphicon glyphicon-arrow-up"></span>
+        <span class="table-down glyphicon glyphicon-arrow-down"></span>
+      </td>
+    </tr>
+    <tr>
+      <td contenteditable="true">2</td>
+      <td contenteditable="true">Team Standup Meeting</td>
+      <td contenteditable="true">In Progress</td>
+      <td>
+        <span class="table-remove glyphicon glyphicon-remove"></span>
+      </td>
+      <td>
+        <span class="table-up glyphicon glyphicon-arrow-up"></span>
+        <span class="table-down glyphicon glyphicon-arrow-down"></span>
+      </td>
+    </tr>
+    <tr>
+      <td contenteditable="true">3</td>
+      <td contenteditable="true">Performance Review </td>
+      <td contenteditable="true">Completed</td>
+      <td>
+        <span class="table-remove glyphicon glyphicon-remove"></span>
+      </td>
+      <td>
+        <span class="table-up glyphicon glyphicon-arrow-up"></span>
+        <span class="table-down glyphicon glyphicon-arrow-down"></span>
+      </td>
+    </tr>
+
+    <!-- This is our clonable table line -->
+    <tr class="hide">
+      <td contenteditable="true">Untitled</td>
+      <td contenteditable="true">undefined</td>
+      <td contenteditable="true">undefined</td>
+      <td>
+        <span class="table-remove glyphicon glyphicon-remove"></span>
+      </td>
+      <td>
+        <span class="table-up glyphicon glyphicon-arrow-up"></span>
+        <span class="table-down glyphicon glyphicon-arrow-down"></span>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<!--
+<h2> Progress for the Day!</h2>
+<div class="w3-light-grey">
+  <div id="myBar" class="w3-container w3-green" style="width:20%">
+    20%
+  </div>
+  <br>
+  <button class="w3-button w3-green" onclick="move()">Click Me</button>
+</div>
+-->
+
+<!-- API Selection Modal
+<div class="modal fade" id="apiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog .modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container-fluid">
+          <span class="col" id="cat-facts-select">
+            Cat Facts
+          </span>
+          <span class="col" id="history-facts-select">
+            History Trivia
+          </span>
+          <span class="col" id="general-trivia-select">
+            General Trivia
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+ -->
+
+<!-- Scripts
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!--script src="dist/bundle-api.js"></script-->
+<script src="js/tomato.js"></script>
+<script src="js/jquery.progressbar.js"></script>
+<!--<script src="js/progressbar.js"></script>-->
+<script src="js/table.js"></script>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

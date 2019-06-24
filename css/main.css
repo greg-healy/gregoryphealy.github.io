@@ -1,0 +1,139 @@
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #333;
+  }
+
+body div.container {
+  /*margin-bottom: 50px;*/
+  margin-top: 50px;
+}
+
+h1 {
+  color: whitesmoke;
+  margin: 10px auto;
+  text-align: center;
+  font-weight: bold;
+}
+
+h2#toBegin {
+  text-align: center;
+}
+
+  h2 {
+    color: whitesmoke;
+    font-size: 18pt;
+    line-height: 1.5;
+    margin-top: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+#button {
+  margin-top:15px;
+  margin-left: 44%;
+}
+
+  a.button1 {
+    display: inline-block;
+    padding: 0.35em 1.2em;
+    border: 0.1em solid #FFFFFF;
+    margin: 10px;
+    border-radius: 0.5em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto',sans-serif;
+    font-weight: 300;
+    font-size:15pt;
+    color: #FFFFFF;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.button1:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+
+.bouncy {
+  animation: bouncy 2s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+  @-webkit-keyframes bouncy {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-30px); }
+  }
+
+@import "compass/css3";
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
+.table {
+    width: 50%;
+    margin: 20px auto;
+    margin-bottom: 20px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+th {
+    font-size: 25px;
+}
+
+.table-editable {
+  position: relative;
+}
+.table-editable .glyphicon {
+  font-size: 20px;
+}
+
+.table-remove {
+  color: #700;
+  cursor: pointer;
+}
+.table-remove:hover {
+  color: #f00;
+}
+
+.table-up, .table-down {
+  color: #007;
+  cursor: pointer;
+}
+.table-up:hover, .table-down:hover {
+  color: #00f;
+}
+
+.table-add {
+  color: #070;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 0;
+}
+.table-add:hover {
+  color: #0b0;
+}
+
+.w3-green, .w3-hover-green:hover {
+  color: #fff!important;
+  background-color: #4CAF50!important;
+  margin-left: 20%;
+}
+
+
+.w3-container, .w3-panel {
+  padding: 0.01em 16px;
+  width:50%;
+  height: 25px;
+  margin-left: 20%;
+}
+
+.glyphicon-plus {
+  margin-right: 30%;
+}

@@ -1,0 +1,136 @@
+.container {
+
+}
+.full-tomato,
+.top,
+.bottom,
+.full-tomato.split,
+.full-tomato.split .bottom {
+  transition: all 0.3s ease-in-out;
+}
+
+.full-tomato {
+  width: 80px;
+  padding: 100px 200px 50px 100px;
+  margin: auto;
+  position: static;
+}
+/*
+.top, .bottom {
+  margin: auto;
+  padding-left: 85px;
+
+}
+*/
+.top {
+  margin-bottom: 50px;
+  padding-bottom: 0px;
+}
+.bottom {
+  margin-top: 50px;
+  padding-top: 0px;
+}
+
+.full-tomato.split {
+  top: 225px; /*Should be 75px less than normal .full-tomato top*/
+}
+.full-tomato.split .bottom {
+  padding-top: 75px; /*Makes for 150px space when combined with previous block*/
+}
+.tomato {
+  background: #ff6347;
+  height: 50px;
+  width: 100px;
+  border-radius: 0 0 50px 50px;
+  position: static;
+  transform: scale(3);
+  display: block;
+}
+.top .tomato {
+  height: 1px;
+}
+.top .tomato::before, .top .tomato::after {
+  content: "";
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ff6347;
+  background: #ff6347;
+  position: absolute;
+  top: -32px;
+  transition: all 0.2s ease-in-out;
+}
+.top .tomato::before {
+  right: 0;
+  border-radius: 0 32px 0 0;
+}
+.top .tomato::after { 
+  border-radius: 32px 0 0 0;
+}
+#tomatoFill {
+  width: 36px;
+  height: 16px;
+  background: #ff6347;
+  position: absolute;
+  top: -16px;
+  left: 32px;
+  transition: all 0.2s ease-in-out;
+}
+#tomatoFill::before {
+  content: "";
+  width: 18px;
+  height: 16px;
+  background: #ff6347;
+  position: absolute;
+  border-radius: 0 16px 0 0;
+  top: -16px;
+  transition: all 0.2s ease-in-out;
+}
+#tomatoFill::after {
+  content: "";
+  width: 18px;
+  height: 16px;
+  background: #ff6347;
+  position: absolute;
+  border-radius: 16px 0 0 0;
+  top: -16px;
+  right: 0;
+  transition: all 0.2s ease-in-out;
+}
+#tomatoTop {
+  background: #a8b848;
+  height: 16px;
+  width: 16px;
+  border-radius: 16px 0 16px 0;
+  position: absolute;
+  transform: rotateZ(135deg);
+  top: -24px;
+  z-index: 1;
+  left: 41px;
+  transition: all 0.2s ease-in-out;
+}
+#tomatoTop::before {
+  content: "";
+  background: #a8b848;
+  height: 16px;
+  width: 16px;
+  border-radius: 16px 0 16px 0;
+  position: absolute;
+  z-index: 1;
+  transform: rotateZ(90deg);
+  top: 12px;
+  transition: all 0.2s ease-in-out;
+}
+#tomatoTop::after {
+  content: "";
+  background: #a8b848;
+  height: 16px;
+  width: 16px;
+  border-radius: 16px 0 16px 0;
+  position: absolute;
+  z-index: 1;
+  transform: rotateZ(90deg);
+  top: -2px;
+  right: 13px;
+  transition: all 0.2s ease-in-out;
+}
+

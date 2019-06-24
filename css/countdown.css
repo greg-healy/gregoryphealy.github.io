@@ -1,0 +1,26 @@
+#countdown {
+  position: static;
+  margin: auto;
+  height: 100px;
+  width: 300px;
+  text-align: center;
+}
+
+#countdown-number {
+  color: white;
+  font-size: 80px;
+  display: inline;
+  position: absolute;
+  top: 110px;
+  left: 385px;
+  line-height: 50%;
+}
+
+@keyframes countdown {
+  from {
+    stroke-dashoffset: 0px;
+  }
+  to {
+    stroke-dashoffset: 250px;
+  }
+}
