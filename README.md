@@ -46,11 +46,6 @@
 *   <span class="c0">Javascript</span>
 *   <span class="c0">HTML and CSS(Sass)</span>
 *   <span class="c0">Front-end framework (e.g. Skeleton, Bootstrap, Semantic UI, Material UI, etc)</span>
-*   <span class="c0">Node.js</span>
-*   <span class="c0">Express.js</span>
-*   <span class="c0">Handlebars</span>
-*   <span class="c0">MySQL(if team chooses to deploy backend and database)</span>
-*   <span class="c0">Webpack (if necessary)</span>
 
 <span class="c1"></span>
 
