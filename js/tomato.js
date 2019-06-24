@@ -1,6 +1,6 @@
-const workTime = 10;
-const restTime = 5;
-const longRestTime = 10;
+const workTime = 25;
+const restTime = 10;
+const longRestTime = 15;
 var roundsComplete = 0;
 var countdown;
 var pauseActive = false;
